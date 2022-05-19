@@ -1,9 +1,9 @@
 import './App.css';
-
+import Card from './components/Card.jsx'
 function App() {
   return (
     <div className="App">
-      Test 2
+      <Card />
     </div>
   );
 }
