@@ -1,2 +1,3 @@
+.PHONY: dockerimage
 dockerimage:
-	docker build -t lana-web:0.0.1 .
+	docker build -t web:0.0.1 .

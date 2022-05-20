@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import axios from "axios";
 import './Card.css';
 
 function Card() {
@@ -9,7 +10,14 @@ function Card() {
 
   /* Handlers */
   const handleAdd = () => {
-    alert(name) 
+    let transaction = {
+      name,
+      amount,
+      date,
+      vendor
+    }
+    axios.post('http://localhost:3003/api/transactions/new', transaction)
+    .then(res => console.log(res.data))
   }
   
 return (
