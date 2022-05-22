@@ -16,7 +16,8 @@ function Card() {
       date,
       vendor
     }
-    axios.post('http://localhost:3003/api/transactions/new', transaction)
+    const data = JSON.stringify(transaction)
+    axios.post('http://localhost:3003/api/transactions/new', data)
     .then(res => console.log(res.data))
   }
   
