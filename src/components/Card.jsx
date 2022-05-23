@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
+import { v4 as uuidv4 } from "uuid";
 import './Card.css';
 
 function Card() {
@@ -7,14 +8,18 @@ function Card() {
   const [amount, setAmount] = useState();
   const [date, setDate] = useState("");
   const [vendor, setVendor] = useState("");
+  const [category, setCategory] = useState("");
 
   /* Handlers */
   const handleAdd = () => {
+    const uuid = uuidv4()
     let transaction = {
       name,
       amount,
       date,
-      vendor
+      vendor,
+      category,
+      uuid
     }
     const data = JSON.stringify(transaction)
     axios.post('http://localhost:3003/api/transactions/new', data)
@@ -31,6 +36,8 @@ return (
   <input type="text" onChange={(e) => setDate(e.target.value)}/>
     <h5>Vendor:</h5>
   <input type="text" onChange={(e) => setVendor(e.target.value)}/>
+    <h5>Category:</h5>
+  <input type="text" onChange={(e) => setCategory(e.target.value)}/>
   <button onClick={handleAdd}>Add</button>
   </div>
 )
