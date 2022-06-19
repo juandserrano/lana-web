@@ -25,7 +25,8 @@ export default function Card(){
     .then(res => console.log(res.data))
   }
   return (
-  <div className="card">
+  <div className="p-2 flex flex-col bg-indigo-300 rounded max-w-md h-max">
+
     <h5>Name:</h5>
   <input type="text" onChange={(e) => setName(e.target.value)}/>
     <h5>Amount:</h5>
