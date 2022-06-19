@@ -9,6 +9,7 @@ RUN npm ci --production
 
 COPY . .
 
+RUN npm run build
 RUN npm run export
 
 #nginx

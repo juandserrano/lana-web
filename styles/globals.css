@@ -2,14 +2,32 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer components {
+  .handbox {
+    border-radius: 255px 15px 225px 15px/15px 225px 15px 255px;
+  }
+}
+
+@layer base {
+  @font-face {
+    font-family: virgil;
+    src: url("Virgil.woff2") format("woff2");
+  }
+}
+
 html,
 body {
   padding: 0;
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
-  background-color: navy;
+  background-color: #4357adff;
   width: 100vw;
   height: 100vh;
 }
 
+@layer components {
+  .virgil {
+    font-family: virgil;
+  }
+}
