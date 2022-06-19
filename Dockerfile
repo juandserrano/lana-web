@@ -9,12 +9,12 @@ RUN npm ci --production
 
 COPY . .
 
-RUN npm run build
+RUN npm run export
 
 #nginx
 FROM nginx:1.21-alpine as prod
 
-COPY --from=build /app/build /usr/share/nginx/html
+COPY --from=build /app/out /usr/share/nginx/html
 
 EXPOSE 80
 

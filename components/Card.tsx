@@ -1,11 +1,10 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import axios from "axios";
 import { v4 as uuidv4 } from "uuid";
-import './Card.css';
 
-function Card() {
+export default function Card(){
   const [name, setName] = useState("");
-  const [amount, setAmount] = useState();
+  const [amount, setAmount] = useState<number>();
   const [date, setDate] = useState("");
   const [vendor, setVendor] = useState("");
   const [category, setCategory] = useState("");
@@ -25,13 +24,12 @@ function Card() {
     axios.post('http://localhost:3003/api/transactions/new', data)
     .then(res => console.log(res.data))
   }
-  
-return (
+  return (
   <div className="card">
     <h5>Name:</h5>
   <input type="text" onChange={(e) => setName(e.target.value)}/>
     <h5>Amount:</h5>
-  <input type="text" onChange={(e) => setAmount(e.target.value)}/>
+  <input type="text" onChange={(e) => setAmount(parseFloat(e.target.value))}/>
     <h5>Date:</h5>
   <input type="text" onChange={(e) => setDate(e.target.value)}/>
     <h5>Vendor:</h5>
@@ -40,7 +38,5 @@ return (
   <input type="text" onChange={(e) => setCategory(e.target.value)}/>
   <button onClick={handleAdd}>Add</button>
   </div>
-)
+      )
 }
-
-export default Card

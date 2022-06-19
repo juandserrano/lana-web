@@ -1,10 +1,10 @@
-import React, { useEffect, useState } from "react";
-import Transaction from "./Transaction.jsx"
-import "./TransactionList.css";
+import { useEffect, useState } from "react";
+import Transaction from "./Transaction";
+import { transaction } from "../types/index"
 
 const TransactionList = () => {
 
-  const [transactions, setTransactions] = useState([{}])
+  const [transactions, setTransactions] = useState<Array<transaction>>([])
 
   useEffect(() => {
     async function fetchData(){
@@ -23,8 +23,8 @@ const TransactionList = () => {
   return (
     <ul>
       {transactions.map(t => 
-        <li key={t.UUID}>
-          <Transaction t={t}/>
+        <li key={t.uuid}>
+          <Transaction transaction={t}/>
         </li>
       )}
     </ul>
