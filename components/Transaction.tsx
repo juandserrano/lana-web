@@ -6,11 +6,11 @@ const Transaction: React.FC<{
   const { name, amount, vendor, category, date } = props.transaction;
   return (
     <div className="flex virgil handbox border border-solid text-xl p-2 space-x-2 justify-around">
-      <span>Juan</span>
-      <span>666</span>
-      <span>Newell</span>
-      <span>Shopping</span>
-      <span>16/03/1984</span>
+      <span>{name}</span>
+      <span>{amount}</span>
+      <span>{vendor}</span>
+      <span>{category}</span>
+      <span>{date}</span>
     </div>
   );
 };
