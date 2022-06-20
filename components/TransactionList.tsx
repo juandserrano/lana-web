@@ -25,7 +25,7 @@ const TransactionList = () => {
       {transactions.length > 0 && (
         <ul className="bg-timberwolf p-5 flex flex-col space-y-[2px] w-10/12 rounded-xl">
           {transactions.map((t) => (
-            <li key={t.uuid}>
+            <li key={t.id}>
               <Transaction transaction={t} />
             </li>
           ))}

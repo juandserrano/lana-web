@@ -1,8 +1,8 @@
 export type transaction = {
 name: string,
 amount: number,
-vendor: string,
-category: string,
-date: string
-uuid: string
+month: string,
+id: number,
+type: number
+accountid: number
 }
